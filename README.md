@@ -1,1 +1,3 @@
 # metalviz
+For scraping data from http://rateyourmusic.com/ custom charts. 
+To be continued...
