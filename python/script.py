@@ -4,14 +4,13 @@ import bs4
 import csv
 
 fileName = 'grindcore'
-file = open(''+fileName+'.html')
-soup = bs4.BeautifulSoup(file, 'html.parser')
+inputFile = open(''+fileName+'.html')
+soup = bs4.BeautifulSoup(inputFile, 'html.parser')
 
 outputFile = open(''+fileName+'.csv', 'w', encoding='utf-8')
 outputWriter = csv.writer(outputFile, delimiter=',', quotechar='"')
 outputWriter.writerow(['id','artist','album','date','genres','ratings'])
 
-#dataSchema
 def parseData():
 	artists = soup.findAll('a', {'class':'artist'})
 	albums = soup.findAll('a', {'class':'album'})
@@ -53,5 +52,5 @@ def debug(a, b, c, d, e):
 
 parseData()
 
-file.close()
+inputFile.close()
 outputFile.close()
