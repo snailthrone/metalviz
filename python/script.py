@@ -24,6 +24,7 @@ def writeData(art, alb, dat, gen, rat):
 		x = 0
 		id1 = 1
 		while x < len(art):
+			#Correcting id:s if there are more than one genre in input file
 			if id1 == 201:
 				id1 = 1
 			artist = art[x].get_text()
